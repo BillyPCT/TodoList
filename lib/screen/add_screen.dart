@@ -82,10 +82,10 @@ class AddScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.blueGrey,
                   )),
-            )
+            ),
           ],
         ),
       ),
     );
-  }
+  }  
 }

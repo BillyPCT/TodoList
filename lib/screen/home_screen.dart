@@ -35,6 +35,50 @@ class HomeScreen extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 40.0,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.person,
+                      size: 40.0,
+                      color: Colors.blue,
+                    ),
+                  ),
+                  SizedBox(height: 16.0,),
+                  Text('TodoListt',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                  ),
+                  )
+                ],
+              ),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('home'),
+                onTap: () {
+                  // Navigasi ke halaman Home
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  // Navigasi ke halaman Settings
+                },
+              )
+            ],
+          ) ),
         body: Consumer<NotesOperation>(
           builder: (context, data, child) {
             return ListView.builder(
