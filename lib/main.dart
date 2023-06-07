@@ -18,9 +18,5 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    // MaterialApp(
-    //     debugShowCheckedModeBanner: false,
-    //     home: HomeScreen(),
-    //   );
   }
 }
