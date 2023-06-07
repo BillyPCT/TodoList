@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_list/ListTile/beranda.dart';
+import 'package:todo_list/ListTile/history.dart';
+import 'package:todo_list/ListTile/settings.dart';
 import 'package:todo_list/Models/note_operations.dart';
 import 'package:todo_list/screen/add_screen.dart';
 import 'package:todo_list/screen/notes_card.dart';
@@ -36,9 +39,10 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
         ),
         drawer: Drawer(
-          child: ListView(
-            children: [
-              DrawerHeader(decoration: BoxDecoration(
+            child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
                 color: Colors.blue,
               ),
               child: Column(
@@ -53,32 +57,52 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.blue,
                     ),
                   ),
-                  SizedBox(height: 16.0,),
-                  Text('TodoListt',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
+                  SizedBox(
+                    height: 16.0,
                   ),
+                  Text(
+                    'TodoListt',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.white,
+                    ),
                   )
                 ],
               ),
-              ),
-              ListTile(
-                leading: Icon(Icons.home),
-                title: Text('home'),
-                onTap: () {
-                  // Navigasi ke halaman Home
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('Settings'),
-                onTap: () {
-                  // Navigasi ke halaman Settings
-                },
-              )
-            ],
-          ) ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Beranda()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.history),
+              title: Text('History'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const History()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Settings()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            )
+          ],
+        )),
         body: Consumer<NotesOperation>(
           builder: (context, data, child) {
             return ListView.builder(
