@@ -10,7 +10,7 @@ class AddScreen extends StatelessWidget {
     late String titleText;
     late String DescriptionText;
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Color.fromARGB(255, 7, 153, 226),
       appBar: AppBar(
         title: const Text('Todo List'),
         centerTitle: true,

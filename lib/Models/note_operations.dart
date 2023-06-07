@@ -12,4 +12,6 @@ class NotesOperation with ChangeNotifier {
     notifyListeners();
     
   }
+
+  void deleteNoteById(id) {}
 }
