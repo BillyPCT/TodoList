@@ -4,7 +4,7 @@ class Contact {
   String _description = '';
 
   // konstruktor 1
-  Contact(this._title, this. _description);
+  Contact(this._title, this._description);
 
   // konstruktor 2: konversi dari Map ke Contact
   Contact.fromMap(Map<String, dynamic> map){
@@ -15,15 +15,15 @@ class Contact {
 
   // getter
   int get id => _id;
-  String get Title => _title;
-  String get descriptoin => _description;
+  String get title => _title;
+  String get description => _description;
 
   // setter
-  set name(String value){
+  set title(String value){
     _title = value;
   }
 
-  set phone(String value){
+  set description(String value){
     _description = value;
   }
 
